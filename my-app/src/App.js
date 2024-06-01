@@ -34,6 +34,7 @@ function App() {
 
       <div className="containerInput">
         <input
+        className="input"
         type="text"
         placeholder="Digite o CEP"
         value={input}
@@ -43,13 +44,17 @@ function App() {
           <FiSearch size={25} color="#fff"/>
         </button>
       </div>
-      <main className="main">
-        <ul className="info">
-          <li>Cep: {cep.cep}</li>
-          <li>Estado: {cep.uf}</li>
-          <li>Cidade: {cep.localidade}</li>
-        </ul>
-      </main>
+      
+      {Object.keys(cep).length > 0 && (
+        <main className="main">
+          <ul className="info">
+            <li>Cep: {cep.cep}</li>
+            <li>Estado: {cep.uf}</li>
+            <li>Cidade: {cep.localidade}</li>
+          </ul>
+        </main>
+      )}
+      
     </div>
 
 
